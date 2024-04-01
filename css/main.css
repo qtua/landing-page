@@ -35,13 +35,13 @@
      font-family: 'Poppins';
      font-size: 15px;
      font-weight: 400;
-     background: #FFDB67;
+     background: #b4c5ff;
      color: #181715;
      text-rendering: optimizeLegibility;
  }
 
  ::selection {
-     background: #ddaa01;
+     background: #0134dd;
      color: #ffffff;
  }
 
@@ -50,8 +50,8 @@
  }
 
  .fixid {
-     background: #FFDB67;
-     box-shadow: 0 0 10px 5px rgba(221, 170, 1, .3);
+     background: #b4c5ff;
+     box-shadow: 0 0 10px 5px #0134dd;
  }
 
  label {
@@ -76,7 +76,7 @@
  }
 
  .goverlay {
-     background: #FFDB67;
+     background: #b4c5ff;
  }
 
  .linkbtn {
@@ -104,7 +104,7 @@
      border: none;
      width: 20px;
      height: 2px;
-     background: #ddaa01;
+     background: #0134dd;
      border-radius: 3px;
      margin: 10px 5px;
      padding: 3px;
@@ -131,7 +131,7 @@
      width: 100%;
      height: 100%;
      z-index: 999999999 !important;
-     background-color: #ddaa01;
+     background-color: #7595fe;
      top: 0;
      left: 0;
      right: 0;
@@ -154,7 +154,7 @@
 */
 
  #headermain {
-     padding: 20px 0 10px;
+     padding: 10px 0 10px;
      position: fixed;
      width: 100%;
      z-index: 3;
@@ -202,7 +202,7 @@
  .navicon {
      position: absolute;
      right: 10px;
-     top: 10px;
+     top: 25px;
      width: 50px;
      height: 50px;
      cursor: pointer;
@@ -266,13 +266,13 @@
      z-index: 2;
      top: -100%;
      display: none;
-     background: #FFDB67;
+     background: #b4c5ff;
      padding: 80px 0 30px 0;
-     border-bottom: 1px solid #ddaa01;
+     border-bottom: 1px solid #0134dd;
  }
 
  .overlay__listnav {
-     padding: 0 0 0 20px;
+     padding: 30px 0 0 20px;
  }
 
  .overlay__listnav li {
@@ -322,7 +322,7 @@
  .infohero__title {
      font-size: 70px;
      font-weight: 600;
-     text-shadow: 5px 5px #ddaa01;
+     text-shadow: 5px 5px #0134dd;
  }
 
  .infohero__title span {
@@ -340,7 +340,7 @@
      height: 350px;
      width: 350px;
      object-fit: cover;
-     box-shadow: 20px 20px 1px 1px #ddaa01;
+     box-shadow: 20px 20px 1px 1px #0134dd;
      border: 7px solid;
  }
 
@@ -393,7 +393,7 @@
 */
 
  #servicesection {
-     background: #FFDB67;
+     background: #b4c5ff;
      height: auto;
      padding: 0px 0 0;
  }
@@ -413,7 +413,7 @@
 
  .wrapservice i {
      font-size: 30px;
-     background: #ddaa01;
+     background: #0134dd;
      padding: 20px 20px;
      border-radius: 100%;
  }
@@ -470,7 +470,7 @@
  }
 
  .porfoliowarp__item:hover .porfoliowarp__content {
-     background-color: #ddaa01;
+     background-color: #0134dd;
      opacity: .5;
  }
 
@@ -519,7 +519,7 @@
 
  #contactsection {
      height: auto;
-     background: #FFDB67;
+     background: #b4c5ff;
      padding: 0 0 50px;
  }
 
