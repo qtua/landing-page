@@ -1,4 +1,4 @@
-const freemaninit = (function() {
+const freemaninit = (function () {
     "use strict";
     // variable 
     var header = document.querySelector('#headermain');
@@ -31,40 +31,40 @@ const freemaninit = (function() {
     //var burger = document.querySelector('.mobilenav');
     //detect mobile device
     const isMobile = {
-        Android: function() {
+        Android: function () {
             return navigator.userAgent.match(/Android/i);
         },
-        BlackBerry: function() {
+        BlackBerry: function () {
             return navigator.userAgent.match(/BlackBerry/i);
         },
-        iOS: function() {
+        iOS: function () {
             return navigator.userAgent.match(/iPhone|iPad|iPod/i);
         },
-        Opera: function() {
+        Opera: function () {
             return navigator.userAgent.match(/Opera Mini/i);
         },
-        Windows: function() {
+        Windows: function () {
             return navigator.userAgent.match(/IEMobile/i);
         },
-        any: function() {
+        any: function () {
             return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
         }
     };
     // loadder page
-    const loadder = function(e) {
+    const loadder = function (e) {
         setTimeout(() => {
             document.querySelector(".preloader").style.display = "none";
         }, 1000);
     };
     // GLightbox
-    const glight = function(e) {
+    const glight = function (e) {
         GLightbox({
             selector: 'glightboxvideo',
         });
         GLightbox();
     };
     // shuffle portfolio
-    const portofolio = function(e) {
+    const portofolio = function (e) {
         var myShuffle = new Shuffle(porto, {
             itemSelector: '.porfoliowarp__item',
             buffer: 0,
@@ -77,16 +77,16 @@ const freemaninit = (function() {
             group: Shuffle.ALL_ITEMS,
         });
         for (var i = 0; i < btns.length; i++) {
-            btns[i].addEventListener("click", function(e) {
+            btns[i].addEventListener("click", function (e) {
                 document.querySelector('.active').classList.remove('active');
-                (document.querySelector('.active')) ? document.querySelector('.active').classList.remove('active'): '';
+                (document.querySelector('.active')) ? document.querySelector('.active').classList.remove('active') : '';
                 this.classList.add('active');
                 myShuffle.filter(e.target.dataset.group);
             });
         };
     };
     // scroll spy 
-    const scrolspy = function(e) {
+    const scrolspy = function (e) {
         // for clickable event
         menuSection.forEach(v => {
             v.onclick = (() => {
@@ -108,7 +108,7 @@ const freemaninit = (function() {
         });
     };
     //animated typed init ------------------------
-    const erase = function(e) {
+    const erase = function (e) {
         if (charIndex > 0) {
             cursor.classList.remove('blink');
             typedText.textContent = textArray[textArrayIndex].slice(0, charIndex - 1);
@@ -123,7 +123,7 @@ const freemaninit = (function() {
             setTimeout(typeanimation, 1000);
         };
     };
-    const typeanimation = function(e) {
+    const typeanimation = function (e) {
         if (charIndex <= textArray[textArrayIndex].length - 1) {
             cursor.classList.remove('blink');
             typedText.textContent += textArray[textArrayIndex].charAt(charIndex);
@@ -135,13 +135,13 @@ const freemaninit = (function() {
         }
     };
     /* scroll counter */
-    counters.forEach(function(item) {
+    counters.forEach(function (item) {
         item.counterAlreadyFired = false
         item.counterSpeed = item.getAttribute("data-Speed") / 45
         item.counterTarget = +item.innerText
         item.counterCount = 0
         item.counterStep = item.counterTarget / item.counterSpeed
-        item.updateCounter = function() {
+        item.updateCounter = function () {
             item.counterCount = item.counterCount + item.counterStep
             item.innerText = Math.ceil(item.counterCount)
             if (item.counterCount < item.counterTarget) {
@@ -151,36 +151,36 @@ const freemaninit = (function() {
             }
         }
     });
-    const counternumber = function() {
-        const isScrolledIntoView = function(el) {
+    const counternumber = function () {
+        const isScrolledIntoView = function (el) {
             var rect = el.getBoundingClientRect();
             var elemTop = rect.top;
             var elemBottom = rect.bottom;
             var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
             return isVisible;
         };
-        counter.forEach(function(item, id) {
+        counter.forEach(function (item, id) {
             if (!isScrolledIntoView(item)) return
             item.updateCounter()
             item.counterAlreadyFired = true
         });
     };
     // click button menu burger
-    const buttonclick = function(e) {
+    const buttonclick = function (e) {
         // menu mobile toggle
-        mobilenav.addEventListener("click", function(e) {
+        mobilenav.addEventListener("click", function (e) {
             this.classList.toggle('active');
             body.classList.toggle('openmenu');
         }, false);
         for (var i = 0; i < mobilelink.length; i++) {
-            mobilelink[i].addEventListener('click', function(e) {
+            mobilelink[i].addEventListener('click', function (e) {
                 mobilenav.classList.toggle('active');
                 body.classList.toggle('openmenu');
             }, false);
         };
     };
     // services slider 
-    const servicesslider = function(e) {
+    const servicesslider = function (e) {
         function autoplay(run) {
             clearInterval(interval);
             interval = setInterval(() => {
@@ -236,7 +236,7 @@ const freemaninit = (function() {
 
             function updateClasses() {
                 var slide = slider.track.details.rel
-                Array.from(dots.children).forEach(function(dot, idx) {
+                Array.from(dots.children).forEach(function (dot, idx) {
                     idx === slide ?
                         dot.classList.add("dot--active") :
                         dot.classList.remove("dot--active")
@@ -294,16 +294,16 @@ const freemaninit = (function() {
         autoplay(true);
     };
     // page scroll
-    const scrollpage = function(e) {
+    const scrollpage = function (e) {
         if (window.pageYOffset > 0) {
             header.classList.add('fixid');
         } else {
             header.classList.remove('fixid');
         }
     };
-    const bindEvents = function(e) {
+    const bindEvents = function (e) {
         // window onbuffer
-        window.onbeforeunload = function(e) {
+        window.onbeforeunload = function (e) {
             window.scrollTo(0, 0);
         };
         window.addEventListener('load', (e) => {
@@ -330,7 +330,7 @@ const freemaninit = (function() {
             counternumber();
         });
     };
-    const AppInit = function(e) {
+    const AppInit = function (e) {
         bindEvents();
     };
     return {
@@ -339,3 +339,15 @@ const freemaninit = (function() {
 }());
 //initilizing app
 freemaninit.AppInit();
+
+
+// Progress bar auto scroll
+window.addEventListener('scroll', handleScroll);
+
+function handleScroll() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+
+    document.getElementById("progressBar").style.width = scrolled + "%";
+}

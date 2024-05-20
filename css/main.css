@@ -571,3 +571,12 @@
      font-size: 13px;
      letter-spacing: 1px;
  }
+
+ .progress-bar {
+     background: #0134DD;
+     height: 7px;
+     width: 0%;
+     position: fixed;
+     top: 0;
+     z-index: 1000;
+ }
