@@ -351,3 +351,16 @@ function handleScroll() {
 
     document.getElementById("progressBar").style.width = scrolled + "%";
 }
+
+function addToGGSheet() {
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbx10vtyXicS0ZqW1gIT3Re4cr52GTlW5LwRR7yCOLU-yQXVpIQsKZlqscTu5cvZOK3R/exec'
+
+    const form = document.forms['contact-form']
+
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .catch(error => console.error('Error!', error.message))
+    })
+    alert("Cảm ơn bạn.");
+}
