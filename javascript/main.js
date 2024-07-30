@@ -352,15 +352,40 @@ function handleScroll() {
     document.getElementById("progressBar").style.width = scrolled + "%";
 }
 
+var content = "";
+
 function addToGGSheet() {
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbx10vtyXicS0ZqW1gIT3Re4cr52GTlW5LwRR7yCOLU-yQXVpIQsKZlqscTu5cvZOK3R/exec'
+    let name = document.getElementById('yourname').value;
+    let email = document.getElementById('yourmail').value;
+    let comment = document.getElementById('comment').value;
 
-    const form = document.forms['contact-form']
+    if (name == "") {
+        return;
+    }
+    if (email == "") {
+        return;
+    }
+    if (comment == "") {
+        return;
+    }
+    else {
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx10vtyXicS0ZqW1gIT3Re4cr52GTlW5LwRR7yCOLU-yQXVpIQsKZlqscTu5cvZOK3R/exec'
 
-    form.addEventListener('submit', e => {
-        e.preventDefault()
-        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-            .catch(error => console.error('Error!', error.message))
-    })
-    alert("Cảm ơn bạn.");
+        const form = document.forms['contact-form']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .catch(error => console.error('Error!', error.message))
+        })
+    }
+    show();
+}
+
+function show() {
+    let show = document.getElementById('card-message').style.display = 'block';
+}
+
+function hide() {
+    let show = document.getElementById('card-message').style.display = 'none';
 }
